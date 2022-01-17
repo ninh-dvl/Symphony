@@ -1,0 +1,308 @@
+#main .container{
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+/*--------------------------------------------------------------
+# Hero Section
+--------------------------------------------------------------*/
+#hero {
+  width: 100%;
+  height: 100%;
+  background: url("../img/hero-bg.jpg") top center;
+  background-size: cover;
+  position: relative;
+}
+#hero:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+#hero .container {
+  padding: 80px 20px 0;
+  max-width: 1170px;
+
+}
+@media (max-width: 992px) {
+  #hero .container {
+    padding-top: 62px;
+  }
+}
+#hero h1 {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 56px;
+  color: #15c148;
+  font-family: "Poppins", sans-serif;
+}
+#hero h2 {
+  color: #eee;
+  margin: 10px 0 0 0;
+  font-size: 24px;
+  font-weight: 300;
+}
+#hero h2 span{
+  color: #fff;
+  font-weight: 700;
+}
+#hero .btn-get-started {
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 35px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin-top: 30px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+}
+    #hero .btn-get-started:hover {
+        background: linear-gradient(to top left, #33ccff 0%, #0099ff 100%);
+        border: 2px solid #fff;
+    }
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+@media (max-width: 768px) {
+
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Sections General
+--------------------------------------------------------------*/
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.section-bg {
+  background-color: #f6f7f6;
+}
+
+.section-title {
+  padding-bottom: 40px;
+}
+.section-title h2 {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  line-height: 20px;
+  margin: 0 0 5px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #aaaaaa;
+  font-family: "Poppins", sans-serif;
+}
+.section-title h2::after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: #018aff;
+  margin: 4px 10px;
+}
+.section-title p {
+  margin: 0;
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  color: #37423b;
+}
+
+/*--------------------------------------------------------------
+# About
+--------------------------------------------------------------*/
+.about-home .content h3 {
+    font-weight: 700;
+    font-size: 36px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.about-home .content ul {
+    list-style: none;
+    padding: 0;
+}
+    .about-home .content ul li {
+        padding-bottom: 10px;
+    }
+    .about-home .content ul i {
+        font-size: 20px;
+        padding-right: 4px;
+        color: #5fcf80;
+    }
+.about-home .content .learn-more-btn {
+    background: #5fcf80;
+    color: #fff;
+    border-radius: 50px;
+    padding: 8px 25px 9px 25px;
+    white-space: nowrap;
+    transition: 0.3s;
+    font-size: 14px;
+    display: inline-block;
+}
+    .about-home .content .learn-more-btn:hover {
+        background: #3ac162;
+        color: #fff;
+    }
+@media (max-width: 768px) {
+    .about-home .content .learn-more-btn {
+        margin: 0 48px 0 0;
+        padding: 6px 18px;
+    }
+}
+
+/*--------------------------------------------------------------
+# Courses
+--------------------------------------------------------------*/
+.courses {
+  max-width: 1170px;
+  padding: 0 20px;
+  margin: 0 auto;
+  margin-top: 60px;
+}
+.courses .course-item {
+  border-radius: 5px;
+  border:1px solid #c7c7c7;
+}
+.courses .course-content {
+  padding: 15px;
+}
+.courses .course-content h3 {
+  font-weight: 700;
+  font-size: 20px;
+}
+.courses .course-content h3 a {
+  color: #37423b;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.courses .course-content h3 a:hover {
+  color: #5fcf80;
+}
+.courses .course-content p {
+  font-size: 14px;
+  color: #777777;
+}
+.courses .course-content h4 {
+  font-size: 14px;
+  background: #018aff;
+  padding: 7px 14px;
+  color: #fff;
+  margin: 0;
+}
+.courses .course-content .price {
+  margin: 0;
+  font-weight: 700;
+  font-size: 18px;
+  color: #37423b;
+}
+.courses .trainer {
+  padding-top: 15px;
+  border-top: 1px solid #eef0ef;
+}
+.courses .trainer .trainer-profile img {
+  max-width: 50px;
+  border-radius: 50px;
+}
+.courses .trainer .trainer-profile span {
+  padding-left: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #5a6c60;
+}
+.courses .trainer .trainer-rank {
+  font-size: 18px;
+  color: #657a6d;
+}
+
+
+/*--------------------------------------------------------------
+# teacher
+--------------------------------------------------------------*/
+.lecturer {
+  margin-bottom: 50px;
+}
+.lecturer .header {
+	text-align: center;
+	font-size: 36px;
+	text-transform: uppercase;
+	font-weight: 700;
+  margin-bottom: 30px;
+}
+.lecturer .header span {
+	color: #5fcf80;
+}
+.lecturer .description {
+  text-align: initial;
+}
+.sub-text {
+	text-align: center;
+	width: 50%;
+	margin: 0 auto 5%;
+}
+.single-service {
+	padding: 35px 20px;
+	transition: all .5s ease;
+}
+.img-area {
+	width: 120px;
+	height: 120px;
+	overflow: hidden;
+	display: inline-block;
+	border-radius: 50%;
+}
+.img-area img {
+	width: 100%;
+}
+.single-service h2 {
+	font-size: 25px;
+	font-weight: 500;
+}
+.single-service h4 {
+	font-size: 16px;
+	font-weight: 500;
+}
+.socials i {
+	margin: 0 15px;
+}
+.single-service{
+  background: linear-gradient(to top left, #33ccff 0%, #0099ff 100%);
+	color: #fff;
+  border-radius: 20px;
+  text-align: center;
+}
+.action {
+    width: 100%;
+    text-align: center;
+    margin-top:30px;
+}
+
+    .action .button-courses {
+        padding: 10px 20px;
+        background: linear-gradient(to top left, #33ccff 0%, #0099ff 100%);
+        border-radius: 20px;
+        text-decoration: none;
+        text-transform: capitalize;
+        color: white;
+        border: 1px solid #fff;
+    }

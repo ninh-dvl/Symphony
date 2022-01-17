@@ -1,0 +1,212 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <!-- Favicons -->
+    <link href="" rel="icon">
+    @*<script src="https://kit.fontawesome.com/67c66657c7.js"></script>*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/client/css/footer.css" rel="stylesheet">
+    <link href="~/assets/client/css/header.css" rel="stylesheet">
+    <link href="~/assets/client/css/home.css" rel="stylesheet">
+    <link href="~/assets/client/css/about.css" rel="stylesheet">
+    <link href="~/assets/client/css/contact.css" rel="stylesheet">
+    <link href="~/assets/client/css/courses.css" rel="stylesheet">
+    <link href="~/assets/client/css/course-details.css" rel="stylesheet">
+    <link href="~/assets/client/css/faq.css" rel="stylesheet">
+    <link href="~/assets/client/css/examination.css" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <!-- Vendor CSS Files -->
+    <link href="~/assets/client/vendor/animate.css/animate.min.css" rel="stylesheet">
+    <link href="~/assets/client/vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/assets/client/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/assets/client/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/assets/client/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="~/assets/client/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("css", false)
+</head>
+<body>
+    <header class="header-page">
+        <div class="nav-container">
+            <nav>
+                <ul class="mobile-nav">
+                    <li>
+                        <a href="@Url.Action("Index", "Home")" class="link-logo">SYMPHONY</a>
+                    </li>
+                    <li>
+                        <div class="menu-icon-container">
+                            <div class="menu-icon">
+                                <span class="line-1"></span>
+                                <span class="line-2"></span>
+                                <span class="line-3"></span>
+                            </div>
+                        </div>  
+                    </li>
+                </ul>
+
+                <ul class="desktop-nav">
+                    <li>
+                      
+                        <a href="@Url.Action("Index", "Home")" class="link-logo">SYMPHONY</a>
+                    </li>
+                    <li class="item"><a href="@Url.Action("Index", "Home")">Home</a></li>
+                    <li class="item"><a href="@Url.Action("About", "Home")">About Us</a></li>
+                    <li class="item"><a href="@Url.Action("Index", "Courses")">Course</a></li>
+                    <li class="item"><a href="@Url.Action("Examination", "Home")">Entrance Examination</a></li>
+                    <li class="item"><a href="@Url.Action("Faq", "Home")">FAQ’s</a></li>
+                    <li class="item"><a href="@Url.Action("Create", "Contacts")">Contact Us</a></li>
+                    <li>
+                        <a href="#" class="link-search"><i class="fas fa-search"></i></a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- End of navigation menu items -->
+
+            <div class="search-container hide">
+                <div class="link-search"><i class="fas fa-search"></i></div>
+                <div class="search-bar">
+                    <form action="">
+                        <input type="text" placeholder="Search course,teacher,....">
+                    </form>
+                </div>
+                <div class="link-close"><i class="fas fa-times"></i></div>
+
+                <div class="quick-links">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li class="quick-item">
+                            <a href="#">C#</a>
+                        </li>
+                        <li class="quick-item">
+                            <a href="#">PHP</a>
+                        </li>
+                        <li class="quick-item">
+                            <a href="#">.NET</a>
+                        </li>
+                        <li class="quick-item">
+                            <a href="#">JAVA</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="mobile-search-container">
+                <div class="link-search"><i class="fas fa-search"></i></div>
+                <div class="search-bar">
+                    <form action="">
+                        <input type="text" placeholder="Search course,teacher,....">
+                    </form>
+                </div>
+                <span class="cancel-btn">Cancel</span>
+
+                <div class="quick-links">
+                    <h2>Quick Links</h2>
+                    <ul>
+                        <li class="quick-item">
+                            <a href="#">C#</a>
+                        </li>
+                        <li class="quick-item">
+                            <a href="#">PHP</a>
+                        </li>
+                        <li class="quick-item">
+                            <a href="#">.NET</a>
+                        </li>
+                        <li class="quick-item">
+                            <a href="#">JAVA</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="overlay"></div>
+    </header>
+
+    @RenderBody()
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li class="item"><a href="/Frontend/Home">Home</a></li>
+                        <li class="item"><a href="/Home/About">About Us</a></li>
+                        <li class="item"><a href="Frontend/Courses">Course</a></li>
+                        <li class="item"><a href="/Home/Examination">Entrance Examination</a></li>
+                        <li class="item"><a href="/Home/Faq">FAQ’s</a></li>
+                        <li class="item"><a href="/Frontend/Contacts/Create">Contact Us</a></li>
+                    </ul>
+                </div>  
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt icon-contact"></i><span class="footer-contact">
+                                285 Đội Cấn
+                                ,Ba Đình ,Hà Nội
+                            </span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt icon-contact"></i><span class="footer-contact">0388859145</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope icon-contact email"></i><span class="footer-contact">symphony@ltd.edu.com</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-aboutus">
+                    <h4>About Us</h4>
+                    <p class="footer-description">
+                        Symphony Ltd. is private institute, which generally conducts the classes and training
+                        materials for the various certifications that are related to IT and Software industries like
+                        networking related, Java related, database related like for SQL Servers, oracle, etc.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyrigth">
+                <h3>Copyright © 2022 Symphony Pte ltd. All right reserved</h3>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/less")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+
+
+    <!-- Vendor JS Files -->
+    <script src="~/assets/client/vendor/purecounter/purecounter.js"></script>
+    <script src="~/assets/client/vendor/aos/aos.js"></script>
+    <script src="~/assets/client/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/assets/client/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/assets/client/js/main.js"></script>
+    <script src="~/assets/client/js/header.js"></script>
+</body>
+</html>

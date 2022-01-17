@@ -1,0 +1,142 @@
+﻿@model symphony_limited.Models.symphony_limited_Model
+
+@{
+    ViewBag.Title = "Faq";
+    Layout = "~/Areas/Frontend/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main" class="faq">
+    <div class="faq-overlay">
+        <div class="faq-container">
+            <div class="faq-wrapper">
+                <button class="toggle">
+                    How to join the course?
+                    <i class="fas fa-plus icon"></i>
+                </button>
+                <div class="content">
+                    <p>
+                        On this the admin should be able to
+                        enter or update the procedures for joining the course that the
+                        institute offers
+                    </p>
+                </div>
+            </div>
+            <div class="faq-wrapper">
+                <button class="toggle">
+                    Why to join the institute?
+                    <i class="fas fa-plus icon"></i>
+                </button>
+                <div class="content">
+                    <p>
+                        The various benefits that the student
+                        can gain by joining the institution is to be provided
+                    </p>
+                </div>
+            </div>
+            <div class="faq-wrapper">
+                <button class="toggle">
+                    When will be Entrance Examinations Conducted?
+                    <i class="fas fa-plus icon"></i>
+                </button>
+                <div class="content">
+                    <p>
+                        Once in 6
+                        months, and one need to check the website for knowing when is
+                        the entrance exam entitled, the fees for the entrance exam (admin
+                        will decide and displayed on the application form), etc. are to be
+                        listed
+                    </p>
+                </div>
+            </div>
+            <div class="faq-wrapper">
+                <button class="toggle">
+                    Can I use the Lab facilities after my class hours? Will there be
+                    any extra hidden charges?
+                    <i class="fas fa-plus icon"></i>
+                </button>
+                <div class="content">
+                    <p>
+                        Yes, you can use the lab
+                        sessions even after your class hours. There will be no charges
+                        during the course days
+                    </p>
+                </div>
+            </div>
+            <div class="faq-wrapper">
+                <button class="toggle">
+                    How can I apply for the entrance exam?
+                    <i class="fas fa-plus icon"></i>
+                </button>
+                <div class="content">
+                    <p>
+                        Once the entrance
+                        exams are entitled, one need to visit the centre for applying it
+                        through paper and fill all the necessary details through online. On
+                        the application form one should chose which course he/she
+                        wanted to pursue.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-wrapper">
+                <button class="toggle">
+                    Will there be any fees for the entrance exam?
+                    <i class="fas fa-plus icon"></i>
+                </button>
+                <div class="content">
+                    <p>
+                        Yes there
+                        will be and it will be available on the application form
+                    </p>
+                </div>
+            </div>
+            <div class="faq-wrapper">
+                <button class="toggle">
+                    How to make the payment?
+                    <i class="fas fa-plus icon"></i>
+                </button>
+                <div class="content">
+                    <p>
+                        Payment can be done through
+                        draft, or through cheque or through cash. For making the
+                        payment through cash, one needs to come to one of the centre of
+                        the institute, and make the payment there itself.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main><!-- End #main -->
+
+@section scripts {
+    <script>
+        let toggles = document.getElementsByClassName('toggle');
+        let contentDiv = document.getElementsByClassName('content');
+        let icons = document.getElementsByClassName('icon');
+
+        for (let i = 0; i < toggles.length; i++) {
+            toggles[i].addEventListener('click', () => {
+                if (parseInt(contentDiv[i].style.height) != contentDiv[i].scrollHeight) {
+                    contentDiv[i].style.height = contentDiv[i].scrollHeight + "px";
+                    toggles[i].style.color = "#0084e9";
+                    icons[i].classList.remove('fa-plus');
+                    icons[i].classList.add('fa-minus');
+                }
+                else {
+                    contentDiv[i].style.height = "0px";
+                    toggles[i].style.color = "#111130";
+                    icons[i].classList.remove('fa-minus');
+                    icons[i].classList.add('fa-plus');
+                }
+
+                for (let j = 0; j < contentDiv.length; j++) {
+                    if (j !== i) {
+                        contentDiv[j].style.height = "0px";
+                        toggles[j].style.color = "#111130";
+                        icons[j].classList.remove('fa-minus');
+                        icons[j].classList.add('fa-plus');
+                    }
+                }
+            });
+        }
+    </script>
+}

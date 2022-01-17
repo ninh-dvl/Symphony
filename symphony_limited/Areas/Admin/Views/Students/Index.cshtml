@@ -1,0 +1,77 @@
+﻿@model IEnumerable<symphony_limited.FrameWork.Student>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_layout.cshtml";
+}
+<div id="menuLogin" styler style="font-family: sans-serif;color: #333;">
+    <ul class="" style="float:right !important;">
+
+        @if (Session["Email"] != null)
+        {
+            <li style="margin-right:80px"><a style="color:red;margin-top:;margin-right:200px">  @Session["Email"]</a></li>
+            <li>@Html.ActionLink("Logout", "Logout", "LoginRegister")</li>
+            <li style="color:black">@Html.ActionLink("Create New", "Create")</li>
+        }
+        else
+        {
+            <li>@Html.ActionLink("Signup", "Signup", "LoginRegister")</li>
+            <li>@Html.ActionLink("Login", "Login", "LoginRegister")</li>
+            <li style="color:black">@Html.ActionLink("Create New", "Create")</li>
+        }
+    </ul>
+</div>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NameStudent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthDay)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Genre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Course.NameCourse)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameStudent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BirthDay)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Genre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Course.NameCourse)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.StudentId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.StudentId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.StudentId })
+        </td>
+    </tr>
+}
+
+</table>

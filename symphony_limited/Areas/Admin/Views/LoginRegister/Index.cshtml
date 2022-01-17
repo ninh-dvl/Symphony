@@ -1,0 +1,59 @@
+﻿@model IEnumerable<symphony_limited.FrameWork.Login>
+
+<h2>Index</h2>
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Areas/Admin/Views/Shared/_layout.cshtml";
+    }
+
+<div id="menuLogin" styler style="font-family: sans-serif;color: #333;">
+    @*<ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Diễn đàn</a></li>
+            <li><a href="#">Tin tức</a></li>
+            <li><a href="#">Hỏi đáp</a></li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>*@
+    <ul class="" style="float:right !important;">
+
+        @if (Session["Email"] != null)
+        {
+            <li style="margin-right:80px"><a style="color:red;margin-top:;margin-right:200px">  @Session["Email"]</a></li>
+            <li>@Html.ActionLink("Logout", "Logout", "LoginRegister")</li>
+        }
+        else
+        {
+            <li>@Html.ActionLink("Signup", "Signup", "LoginRegister")</li>
+            <li>@Html.ActionLink("Login", "Login", "LoginRegister")</li>
+
+        }
+    </ul>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PassWord)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PassWord)
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+.footer .container{
+	max-width: 1170px;
+	margin:auto;
+}
+.footer .row{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding: 0 20px;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	background-color: #24262b;
+	padding-top: 30px;
+}
+.footer .row .footer-col{
+   width: 30%;
+   padding: 0 15px;
+}
+.footer .row .footer-col ul {
+	padding-left: 0;
+}
+.footer .row .footer-col:first-child {
+	padding-left: 0;
+}
+.footer .row .footer-col:last-child {
+	padding-right: 0;
+}
+.footer-aboutus {
+	width: 40%;
+}
+.footer .row .footer-col h4{
+	font-size: 18px;
+	color: #ffffff;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+}
+.footer .row .footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #018aff;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+}
+.footer .row .footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer .row .footer-col ul li a,
+.footer-description,
+.footer-contact{
+	font-size: 16px;
+	text-transform: capitalize;
+	text-decoration: none;
+	font-weight: 300;
+	color: #bbbbbb;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer .row .footer-col ul li a:hover{
+	color: #ffffff;
+	padding-left: 8px;
+}
+.footer-description:hover,
+.footer-contact:hover,
+.icon-contact:hover,
+.icon-contact.email {
+	color: #fff;
+}
+
+.footer-contact {
+	display: inline-block;
+	margin-left: 8px;
+	color: #bbbbbb;
+}
+
+.icon-contact.email,
+.icon-contact {
+	color: #bbbbbb;
+}
+.footer .row .footer-col .social-links {
+	margin-top: 18px;
+}
+
+
+.footer .row .footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #ffffff;
+	transition: all 0.5s ease;
+}
+.footer .row .footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+.copyrigth {
+	border-top: 1px solid #8f8f8f ;
+	text-align: center;
+	color: white;
+	padding: 18px 0;
+	margin-top: 30px;
+}
+
+.copyrigth h3 {
+	font-size: 16px;
+	font-weight: 400;
+}
+/*responsive*/
+@media(max-width: 768px){
+	.footer .row .footer-col{
+    width: 100%;
+    margin-bottom: 30px;
+	}
+	.footer .row .footer-col:first-child {
+		padding-left: 15px;
+	}
+	.footer .row .footer-col:last-child {
+		padding-right: 15px;
+	}
+}
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+	position: fixed;
+	visibility: hidden;
+	opacity: 0;
+	right: 15px;
+	bottom: 15px;
+	z-index: 996;
+	background: #018aff;
+	width: 40px;
+	height: 40px;
+	border-radius: 50px;
+	transition: all 0.4s;
+  }
+  .back-to-top i {
+	font-size: 28px;
+	color: #fff;
+	line-height: 0;
+  }
+  .back-to-top:hover {
+	background: #018aff;
+	color: #fff;
+  }
+  .back-to-top.active {
+	visibility: visible;
+	opacity: 1;
+  }
+
+
+
+

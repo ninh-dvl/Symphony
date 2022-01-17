@@ -1,0 +1,44 @@
+﻿/*==Reset CSS==*/
+* {
+    margin-left:0;
+    
+    padding: 0;
+
+}
+
+/*==Style cơ bản cho website==*/
+
+
+/*==Style cho menu===*/
+#menuLogin ul {
+    float:left;
+    /*margin-right:967px;*/
+    background: ;
+    list-style-type: none;
+    text-align: center;
+}
+
+#menuLogin li {
+    float: left;
+    color: #4e73df;
+    display: inline-block;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: -5px;
+}
+
+#menuLogin a {
+    text-decoration: none;
+    color: #4e73df;
+    display: block;
+}
+#menuLogin b {
+    color:red;
+}
+
+#menuLogin a:hover {
+    background: #F1F1F1;
+    color: #333;
+    border-radius:5px;
+}

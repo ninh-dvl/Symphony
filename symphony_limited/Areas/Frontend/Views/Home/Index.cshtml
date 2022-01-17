@@ -1,0 +1,121 @@
+﻿@model IEnumerable<symphony_limited.FrameWork.Course>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Frontend/Views/Shared/_Layout.cshtml";
+}
+
+<section id="hero" class="d-flex justify-content-center align-items-center">
+    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+        <h1>Learning Today,<br>Leading Tomorrow</h1>
+        <h2><span>SYMPHONY</span> offers basic to advanced information technology courses.</h2>
+        <a href="/Frontend/Courses" class="btn-get-started">Get Started</a>
+    </div>
+</section>
+
+<main id="main">
+    <div class="courses" data-aos="fade-up" data-aos-delay="100">
+        <div class="section-title">
+            <h2>Courses</h2>
+            <p>Latest courses</p>
+        </div>
+        <div class="SwiperCourses swiper">
+            <div class="swiper-wrapper">
+                @foreach (var item in Model)
+                {
+                    <div class="swiper-slide course-item">
+                        <img src="~/Upload/Course/@item.Img" class="img-fluid" alt="..." style="width:267px;height:155px">
+                        <div class="course-content">
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4>@Html.DisplayFor(modelItem => item.Category.NameCategory)</h4>
+                                <p class="price">$@Html.DisplayFor(modelItem => item.Price)</p>
+                            </div>
+                            <h3> @Html.ActionLink(@item.NameCourse, "CourseDetail", new { id = item.CourseId })</h3>
+                            @*<p>
+                             Et architecto provident deleniti facere repellat nobis iste. Id facere
+                         quia quae
+                         dolores dolorem tempore.
+                        </p>*@
+                            <div class="trainer d-flex justify-content-between align-items-center">
+                                <div class="trainer-profile d-flex align-items-center">
+                                    <img src="~/Upload/Teacher/@item.Teacher.Image" class="img-fluid" alt="">
+                                    <span>@Html.DisplayFor(modelItem => item.Teacher.NameTeachear)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+
+        <div class="action">
+            <a href="#" class="button-courses">View All Courses</a>
+        </div>
+    </div>
+
+    <section id="about-home" class="about">
+        <div class="container" data-aos="fade-up-right">
+
+            <div class="row">
+                <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-up-left" data-aos-delay="100">
+                    <img src="~/assets/client/img/about.jpg" class="img-responsive" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+                    <h3>overview</h3>
+                    <p class="fst-italic">
+                        Symphony Ltd. is private institute, which generally conducts the classes and training
+                        materials for the various certifications that are related to IT and Software industries like
+                        networking related, Java related, database related like for SQL Servers, oracle, etc. They
+                        are one of the famous institutions which have spread in to various branches situated at
+                        different location in the state.
+                    </p>
+                    <ul>
+                        <li>
+                            <i class="bi bi-check-circle"></i>Adopting Education Management System 4.0 powered by
+                            Google
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle"></i>Continuously updating new technology to keep up with
+                            business needs
+                        </li>
+                        <li>
+                            <i class="bi bi-check-circle"></i>Students are allowed to participate in applications,
+                            visits and interviews with businesses regularly during their studies.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="lecturer">
+        <div class="container">
+            <h1 class="header">Outstanding <span>Lecturer</span></h1>
+            <div class="swiper SwiperLecturer" data-aos="zoom-in-up" data-aos-delay="100">
+                <div class="swiper-wrapper">
+                    @foreach (var item in Model)
+                    {
+                        <div class="swiper-slide">
+                            <div class="single-service center-align">
+                                <div class="img-area"><img alt="" src="~/Upload/Teacher/@item.Teacher.Image"></div>
+                                <h2>@item.Teacher.NameTeachear</h2>
+                                <h4></h4>
+                                <p class="description">
+                                    @item.Teacher.Experience
+                                </p>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+@section scripts {
+    <script src="~/assets/client/js/li.js"></script>
+}

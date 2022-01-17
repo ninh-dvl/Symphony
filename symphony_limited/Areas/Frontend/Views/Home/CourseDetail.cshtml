@@ -1,0 +1,146 @@
+﻿@model symphony_limited.FrameWork.Course
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Frontend/Views/Shared/_Layout.cshtml";
+}
+
+<div class="breadcrumbs" data-aos="fade-in">
+    <div class="container">
+        <h2>Course Details</h2>
+        <p>
+            Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit
+            quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium.
+        </p>
+    </div>
+</div><!-- End Breadcrumbs -->
+<main id="main-detail">
+    <!-- ======= Cource Details Section ======= -->
+    <section id="course-details" class="course-details">
+        <div class="course-details-container" data-aos="fade-up">
+
+            <div class="row">
+                <div class="col-lg-8">
+
+
+                    <img src="~/Upload/Course/" class="img-fluid" alt="">
+
+                    <h3>@Html.DisplayFor(model => model.NameCourse)</h3>
+                    <p>
+                        @Html.DisplayFor(model => model.Description)
+                    </p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>@Html.DisplayFor(model => model.Teacher.NameTeachear)</h5>
+                        <p><a href="#">@Html.DisplayFor(model => model.Teacher.Image)</a></p>
+                    </div>
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Course Fee</h5>
+                        <p>$165</p>
+                    </div>
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Number of subject</h5>
+                        <p>30</p>
+                    </div>
+                    <div class="course-info d-flex justify-content-between align-items-center">
+                        <h5>Schedule</h5>
+                        <p>8.00 am - 12.00 am <br> 13.00 pm - 17.00 pm <br> 18.00 pm - 22.00 pm</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section><!-- End Cource Details Section -->
+    <div class="action action-courses">
+        <button type="button" class="button-courses detail" data-toggle="modal" data-target="#exampleModalCenter">
+            Registration Now
+        </button>
+    </div>
+</main><!-- End #main -->
+<section class="modal fade vh-100 gradient-custom" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered container py-5 h-100">
+        <div class=" row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-12 col-xl-12">
+                <div class="card modal-content shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <div class="modal-header">
+                            <h3 class=" mb-4 pb-2 pb-md-0 mb-md-5">Registration</h3>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <form class="modal-body">
+                            <div class="row">
+                                <div class="col-md-12 mb-4">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="firstName">Full Name</label>
+                                        <input type="text" id="firstName" placeholder="ex:Nguyen Khanh Ninh" class="form-control form-control-lg" />
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-4 d-flex align-items-center">
+                                    <div class="form-outline datepicker w-100">
+                                        <label for="birthdayDate" class="form-label">Birthday</label>
+                                        <input type="date"
+                                               class="form-control form-control-lg"
+                                               id="birthdayDate" />
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-4 pb-2">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="phoneNumber">Phone Number</label>
+                                        <input type="tel" id="phoneNumber" placeholder="038256789" class="form-control form-control-lg" />
+                                    </div>
+                                </div>
+                                <div class="col-md-12 mb-4">
+                                    <h6 class="mb-2 pb-1">Gender: </h6>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"
+                                               type="radio"
+                                               name="inlineRadioOptions"
+                                               id="femaleGender"
+                                               value="option1"
+                                               checked />
+                                        <label class="form-check-label" for="femaleGender">Female</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"
+                                               type="radio"
+                                               name="inlineRadioOptions"
+                                               id="maleGender"
+                                               value="option2" />
+                                        <label class="form-check-label" for="maleGender">Male</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input"
+                                               type="radio"
+                                               name="inlineRadioOptions"
+                                               id="otherGender"
+                                               value="option3" />
+                                        <label class="form-check-label" for="otherGender">Other</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 mb-4 pb-2">
+                                    <div class="form-outline">
+                                        <label class="form-label" for="emailAddress">Email</label>
+                                        <input type="email" id="emailAddress" placeholder="symohoy@learning.edu.com" class="form-control form-control-lg" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer mt-4 pt-2">
+                                <input class="btn btn-primary btn-lg" type="submit" value="Submit" />
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

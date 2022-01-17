@@ -1,0 +1,146 @@
+﻿@model symphony_limited.Models.symphony_limited_Model
+
+@{
+    ViewBag.Title = "Examination";
+    Layout = "~/Areas/Frontend/Views/Shared/_Layout.cshtml";
+}
+
+<main id="main" class="examination">
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="breadcrumbs" data-aos="fade-in">
+        <div class="container">
+            <h2>Entrance examination</h2>
+        </div>
+    </div><!-- End Breadcrumbs -->
+    <div class="examination-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>1. Registration procedure</h3>
+                    <p>Candidates need to complete the registration procedure for the exam directly at the academy 5 days before taking the exam. Candidates contact the Admissions Office in advance to know the Exam Schedule, receive Exam Preparation Materials and Test Report Cards. The application form includes:</p>
+                    <h5>- 2 photos 4x6cm</h5>
+                    <h5>- Exam fee: 5$</h5>
+                    <p>
+                        Candidates coming to the exam must bring the exam report card with personal photo and Aptech's stamp. Before entering the examination room, candidates must turn off cell phones and pagers and are not allowed to bring dictionaries or other relevant documents into the examination room.
+                    </p>
+                    <h3>2. Form of entrance exam: </h3>
+                    <p>- Candidates take the test in 90 minutes (in which Math Logic is 60 minutes and English is 30 minutes)</p>
+                    <p>- SYMPHONY organizes monthly entrance exam and opening ceremony at campuses</p>
+                    <h3>4. References:</h3>
+                    <p>
+                        Candidates can <strong>download sample test questions and answers :</strong>
+                        <strong><a href="https://aptechvietnam.com.vn/sites/default/files/Gmat2_tiengViet_0.pdf">GMAT 1</a></strong>,
+                        <strong><a href="https://aptechvietnam.com.vn/sites/default/files/GMAT1_Key.pdf">GMAT 1 result</a></strong>,
+                        <strong><a href="https://aptechvietnam.com.vn/sites/default/files/GMAT2_0.pdf">GMAT 2</a></strong>,
+                        <strong><a href="https://aptechvietnam.com.vn/sites/default/files/GMAT2_Key.pdf">GMAT 20 result</a></strong>,
+                    </p>
+                    <h3>5. Calender</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="accordion">
+
+        <div class="accordion-item">
+            <div class="accordion-item-header">
+                SYMPHONY enrollment schedule in June
+            </div>
+            <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                    <p><strong>Test day:</strong> June 15, 2022</p>
+                    <p><strong>Content: </strong> </p>
+                    <p>- The SYMPHONY Entrance Exam in June 2022 was held at all academies</p>
+                    <p>- How to apply: Candidates register for the exam online at: <a href="@Url.Action("Cources", "Home")">tại đây</a></p>
+                    <p>- Candidates register for the exam, contact Hotline +1 8008 1141 (free of charge), or leave a message for registration instructions.</p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-item-header">
+                SYMPHONY enrollment schedule in December
+            </div>
+            <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                    <p><strong>test day:</strong> December 15, 2022</p>
+                    <p><strong>Content: </strong> </p>
+                    <p>- The SYMPHONY Entrance Exam in December 2022 was held at all academies</p>
+                    <p>- How to apply: Candidates register for the exam online at: <a href="@Url.Action("Cources", "Home")">tại đây</a></p>
+                    <p>- Candidates register for the exam, contact Hotline +1 8008 1141 (free of charge), or leave a message for registration instructions.</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-item-header">
+                What are some basic technical skills of a Front-End developer?
+            </div>
+            <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                    <ul style="padding-left: 1rem;">
+                        <li>HTML, CSS, JavaScript</li>
+                        <li>Frameworks (CSS and JavaScript frameworks)</li>
+                        <li>Responsive Design</li>
+                        <li>Version Control/Git</li>
+                        <li>Testing/Debugging</li>
+                        <li>Browser Developer Tools</li>
+                        <li>Web Performance</li>
+                        <li>SEO (Search Engine Optimization)</li>
+                        <!-- <li>CSS Preprocessing</li> -->
+                        <li>Command Line</li>
+                        <li>CMS (Content Management System)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-item-header">
+                What is HTTP?
+            </div>
+            <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                    HTTP, aka HyperText Transfer Protocol, is the underlying protocol used by the World Wide Web and this protocol defines how messages are formatted and transmitted, and what actions Web servers and browsers should take in response to various commands.
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <div class="accordion-item-header">
+                What is CORS?
+            </div>
+            <div class="accordion-item-body">
+                <div class="accordion-item-body-content">
+                    CORS, aka Cross-Origin Resource Sharing, is a mechanism that enables many resources (e.g. images, stylesheets, scripts, fonts) on a web page to be requested from another domain outside the domain from which the resource originated.
+                </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+@section scripts {
+    <script>
+        const accordionItemHeaders = document.querySelectorAll(".accordion-item-header");
+
+        accordionItemHeaders.forEach(accordionItemHeader => {
+            accordionItemHeader.addEventListener("click", event => {
+
+                // Uncomment in case you only want to allow for the display of only one collapsed item at a time!
+
+                // const currentlyActiveAccordionItemHeader = document.querySelector(".accordion-item-header.active");
+                // if(currentlyActiveAccordionItemHeader && currentlyActiveAccordionItemHeader!==accordionItemHeader) {
+                //   currentlyActiveAccordionItemHeader.classList.toggle("active");
+                //   currentlyActiveAccordionItemHeader.nextElementSibling.style.maxHeight = 0;
+                // }
+
+                accordionItemHeader.classList.toggle("active");
+                const accordionItemBody = accordionItemHeader.nextElementSibling;
+                if (accordionItemHeader.classList.contains("active")) {
+                    accordionItemBody.style.maxHeight = accordionItemBody.scrollHeight + "px";
+                }
+                else {
+                    accordionItemBody.style.maxHeight = 0;
+                }
+
+            });
+        });
+    </script>
+}

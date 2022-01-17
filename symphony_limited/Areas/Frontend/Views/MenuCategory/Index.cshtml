@@ -1,0 +1,12 @@
+﻿
+<ul class="group-category">
+    @foreach (var item in ViewBag.NameCategory)
+    {
+        <li class="item">
+            <a href="@Url.Action("Index","Courses"@*,new { CategoryId = item.key}*@)">
+                @item.Value
+            </a>
+        </li>
+    }
+    </ul>
+

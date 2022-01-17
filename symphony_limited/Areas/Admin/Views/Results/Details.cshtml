@@ -1,0 +1,43 @@
+﻿@model symphony_limited.FrameWork.Result
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Result</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Student.NameStudent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student.NameStudent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameReult)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameReult)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Point)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Point)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

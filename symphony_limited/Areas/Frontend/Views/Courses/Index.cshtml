@@ -1,0 +1,113 @@
+﻿
+@using System.Globalization
+@using PagedList.Mvc
+@model PagedList.IPagedList<symphony_limited.FrameWork.Course>
+
+
+@{
+    ViewBag.Title = "Courses";
+    Layout = "~/Areas/Frontend/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="breadcrumbs">
+    <!-- ======= Breadcrumbs ======= -->
+    <div class="container">
+        <h2>Courses</h2>
+        <p>summarizing all the most outstanding courses.</p>
+    </div>
+</div><!-- End Breadcrumbs -->
+<div id="sidebar-mobile">
+    <div id="mainbox" onclick="openFunction()"><i class="fas fa-bars btn-menu"></i></div>
+    <div id="menu" class="sidemenu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Login</a>
+        <a href="#" class="closebtn" onclick="closeFunction()"><i class="fas fa-times"></i></a>
+    </div>
+</div>
+<div class="overlay-courses">
+    <main id="main" class="row main-courses">
+        <div class="category col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xs-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="box">
+                <h2 class="title">Category</h2>
+                @{Html.RenderAction("Index", "MenuCategory");}
+            </div>
+        </div>
+        <div class="courses-content col-xl-9 col-lg-9 col-md-9 col-sm-8 col-xs-12">
+            <!-- ======= Courses Section ======= -->
+            <section id="courses" class="courses">
+                <div class="container-courses" data-aos="fade-up" data-aos-delay="100">
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="courses-item col-lg-4 col-md-6  d-flex align-items-stretch ">
+                                <div class="course-item">
+                                    <img src="~/Upload/Course/@Html.DisplayFor(modelItem => item.Img)" class="img-responsive" alt="..." style="width:255px;height:143px; ">
+                                    <div class="course-content">
+                                        <div class="d-flex justify-content-between align-items-center mb-3">
+                                            <h4>@Html.DisplayFor(modelItem => item.Category.NameCategory)</h4>
+                                            <p class="price">$@Html.DisplayFor(modelItem => item.Price)</p>
+                                        </div>
+                                        <h3> @Html.ActionLink(@item.NameCourse, "Details", new { id = item.CourseId })</h3>
+                                        <div class="trainer d-flex justify-content-between align-items-center">
+                                            <div class="trainer-profile d-flex align-items-center">
+                                                <img src="~/Upload/Teacher/@Html.DisplayFor(modelItem => item.Teacher.Image)" class="img-responsive" alt="">
+                                                <span>@Html.DisplayFor(modelItem => item.Teacher.NameTeachear)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- End Course Item-->
+                        }
+
+
+
+                    </div>
+                </div>
+            </section><!-- End Courses Section -->
+        </div>
+    </main>
+
+</div>
+<div style="margin-left:1400px">
+    @Html.PagedListPager(
+    Model,
+    pageNumber => Url.Action(
+         "Index",
+         new
+         {
+             pageNumber,
+             pageSize = Request["pageSize"],
+             search = Request["search"],
+             order = Request["order"],
+             sort = Request["sort"]
+         }
+    )
+)
+</div>
+
+<script type="text/javascript">
+    function openFunction() {
+        document.getElementById("menu").style.width = "300px";
+        document.getElementById("mainbox").style.marginLeft = "300px";
+        document.getElementById("mainbox").innerHTML = "";
+        document.getElementById("sidebar-mobile").style.position = "fixed";
+        document.getElementById("sidebar-mobile").style.inset = "0";
+        document.getElementById("sidebar-mobile").style.zIndex = "1";
+        document.getElementById("sidebar-mobile").style.background = "rgb(0,0,0,0.5)";
+    }
+    function closeFunction() {
+        document.getElementById("menu").style.width = "0px";
+        document.getElementById("mainbox").style.marginLeft = "0px";
+        document.getElementById("mainbox").innerHTML = "<i class='fas fa-bars btn-menu'></i>";
+        document.getElementById("sidebar-mobile").style.position = "relative";
+        document.getElementById("sidebar-mobile").style.inset = "unset";
+        document.getElementById("sidebar-mobile").style.zIndex = "1";
+        document.getElementById("sidebar-mobile").style.background = "unset";
+    }
+</script>
+
+
+
